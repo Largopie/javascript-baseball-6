@@ -25,4 +25,8 @@ export default class Validation {
       this.isRestartInputValid = false;
     }
   }
+
+  getRestartInputValid() {
+    return this.isRestartInputValid;
+  }
 }

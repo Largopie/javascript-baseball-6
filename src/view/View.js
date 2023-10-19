@@ -45,14 +45,23 @@ export default class View {
     this.controller.isCorrect(resultComment);
   }
 
+  /**
+   * 입력한 값이 정답일 때 문구 출력
+   */
   printCorrectNumber() {
     Console.print(this.CORRECT_NUMBER);
   }
 
+  /**
+   * 재시작 여부 입력한 값이 유효하지 않을 때 에러 발생
+   */
   printRestartInputError() {
     throw new Error(this.RESTART_INPUT_ERROR);
   }
 
+  /**
+   * 재시작 여부 입력 받아 재시작 여부 판별 로직으로 보냄
+   */
   async getRestartInput() {
     const RESTART_INPUT = await Console.readLineAsync(this.RESTART_INPUT_COMMENT);
     

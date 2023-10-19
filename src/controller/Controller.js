@@ -6,6 +6,10 @@ export default class Controller {
   constructor() {
     this.view = new View();
     this.computerNumber = new ComputerNumber();
-    this.UserInputNumber = new UserInputNumber();
+    this.userInputNumber = new UserInputNumber();
+  }
+
+  updateUserInputNumber(inputNumber) {
+    this.userInputNumber.setNumber(inputNumber);
   }
 }

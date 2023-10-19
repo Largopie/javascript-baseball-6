@@ -55,4 +55,17 @@ export default class Controller {
 
     this.view.printUserInputResult(strikeBallCounts);
   }
+
+  /**
+   * 유저 입력 값에 따라 게임이 끝 끝났는지 판단 로직
+   * @param {string} resultComment [유저 입력 결과]
+   */
+  isCorrect(resultComment) {
+    if(resultComment === '3스트라이크') {
+      this.view.printCorrectNumber();
+      this.view.getRestartInput();
+    } else if(resultComment !== '3스트라이크') {
+      this.view.getUserInput();
+    }
+  }
 }

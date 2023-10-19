@@ -16,4 +16,9 @@ export default class Validation {
       this.userInputValidation = false;
     }
   }
+
+  getUserInputValidation(userInput) {
+    this.checkUserInputValid(userInput)
+    return this.userInputValidation;
+  }
 }

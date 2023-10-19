@@ -86,4 +86,15 @@ export default class Controller {
       this.view.printGameOver();
     }
   }
+
+  /**
+   * 게임 시작 로직 구현
+   */
+  init() {
+    if(this.isFirstGame) {
+      this.view.printGameStart();
+    }
+    this.computerNumber.chooseRandomNumber();
+    this.view.getUserInput();
+  }
 }

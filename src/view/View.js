@@ -44,4 +44,8 @@ export default class View {
     Console.print(resultComment);
     this.controller.isCorrect(resultComment);
   }
+
+  printCorrectNumber() {
+    Console.print(this.CORRECT_NUMBER);
+  }
 }

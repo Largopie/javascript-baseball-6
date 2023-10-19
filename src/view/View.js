@@ -30,7 +30,7 @@ export default class View {
   }
 
   /**
-   * 볼과 스트라이크 개수에 따른 출력 로직
+   * 볼과 스트라이크 개수에 따른 출력 후 게임이 끝났는지 여부 확인
    * @param {number[]} param [스트라이크 수, 볼 수]
    */
   printUserInputResult([strike, ball]) {
@@ -42,5 +42,6 @@ export default class View {
     if(!ball && !strike) resultComment+='낫싱';
 
     Console.print(resultComment);
+    this.controller.isCorrect(resultComment);
   }
 }

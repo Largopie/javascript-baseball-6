@@ -15,4 +15,11 @@ export default class View {
   printInputNumberError() {
     throw new Error(this.INPUT_NUMBER_ERROR);
   }
+
+  async getUserInput() {
+    const userInput = Console.readLineAsync(this.INPUT_NUMBER_COMMENT);
+
+    this.controller.updateUserInputNumber(userInput);
+    this.controller.isUserInputValid();
+  }
 }

@@ -6,6 +6,7 @@ export default class View {
     this.GAME_START_COMMENT = '숫자 야구 게임을 시작합니다.';
     this.INPUT_COMMENT = '숫자를 입력해주세요 : ';
     this.SUCCESS_COMMENT = '3개의 숫자를 모두 맞히셨습니다! 게임 종료';
+    this.RESTART_COMMENT = '게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.\n';
     this.ERROR_COMMENT =
       '입력 숫자 오류!! 1부터 9까지 서로 다른 수로 이루어진 3자리 숫자를 입력하세요!';
     this.RESTART_ERROR_COMMENT =
@@ -37,5 +38,12 @@ export default class View {
 
   printSuccessComment() {
     Console.print(this.SUCCESS_COMMENT);
+  }
+
+  async printRestartComment() {
+    const userInput = await Console.readLineAsync(this.RESTART_COMMENT);
+    if(!this.controller.userRestartValidation(userInput)) {
+      throw new Error(this.RESTART_COMMENT);
+    }
   }
 }

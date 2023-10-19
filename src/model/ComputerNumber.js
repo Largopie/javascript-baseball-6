@@ -1,6 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 
-export default class ComputeNumber {
+export default class ComputerNumber {
   constructor() {
     this.number = null;
   }

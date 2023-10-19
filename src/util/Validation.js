@@ -15,4 +15,8 @@ export default class Validation {
       this.userInputValid = false;
     }
   }
+
+  getUserInputValid() {
+    return this.isUserInputValid;
+  }
 }

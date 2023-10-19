@@ -23,7 +23,7 @@ export default class View {
    * 유저가 시도한 input을 받은 후 유효성을 검증하는 로직
    */
   async getUserInput() {
-    const USER_INPUT = Console.readLineAsync(this.INPUT_NUMBER_COMMENT);
+    const USER_INPUT = await Console.readLineAsync(this.INPUT_NUMBER_COMMENT);
 
     this.controller.updateUserInputNumber(USER_INPUT);
     this.controller.isUserInputValid();

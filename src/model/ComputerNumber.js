@@ -1,3 +1,5 @@
+import { Random } from "@woowacourse/mission-utils";
+
 export default class ComputeNumber {
   constructor() {
     this.number = null;
@@ -9,5 +11,16 @@ export default class ComputeNumber {
 
   setNumber(newNumber) {
     this.number = newNumber;
+  }
+
+  chooseRandomNumber() {
+    const computer = [];
+    while (computer.length < 3) {
+      const number = Random.pickNumberInRange(1, 9);
+      if (!computer.includes(number)) {
+        computer.push(number);
+      }
+    }
+    this.setNumber(computer);
   }
 }

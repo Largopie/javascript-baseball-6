@@ -76,4 +76,8 @@ export default class View {
     Console.print(this.GAME_OVER_COMMENT);
     return;
   }
+
+  printGameStart() {
+    Console.print(this.GAME_START_COMMENT);
+  }
 }

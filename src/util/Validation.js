@@ -13,7 +13,7 @@ export default class Validation {
     const USER_INPUT_LENGTH = userInput.length;
     const USER_INPUT_TO_SET_LENGTH = new Set(userInput).size;
     const USER_INPUT_TO_NUMBER = +userInput.join('');
-    if(this.numberRangeValidation.test(USER_INPUT_TO_NUMBER) ||
+    if(!this.numberRangeValidation.test(USER_INPUT_TO_NUMBER) ||
       USER_INPUT_LENGTH !== 3 ||
       USER_INPUT_TO_SET_LENGTH !== 3
     ) {

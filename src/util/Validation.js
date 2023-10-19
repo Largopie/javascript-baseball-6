@@ -12,21 +12,24 @@ export default class Validation {
       userInputNumberLength !== 3 ||
       userInputNumberToSetLength !== userInputNumberLength
     ) {
-      this.userInputValid = false;
+      this.isUserInputValid = false;
     }
   }
 
-  getUserInputValid() {
+  getUserInputValid(userInputNumber) {
+    this.checkUserInputValidation(userInputNumber);
     return this.isUserInputValid;
   }
 
+
   checkRestartInputValidation(restartInputNumber) {
-    if(restartInputNumber !== 1 && restartInputNumber !== 2) {
+    if(restartInputNumber !== '1' && restartInputNumber !== '2') {
       this.isRestartInputValid = false;
     }
   }
 
-  getRestartInputValid() {
+  getRestartInputValid(restartInputNumber) {
+    this.checkRestartInputValidation(restartInputNumber)
     return this.isRestartInputValid;
   }
 }

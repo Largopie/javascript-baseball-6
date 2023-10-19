@@ -67,4 +67,13 @@ export default class View {
     
     this.controller.isRestartInputValid(RESTART_INPUT);
   }
+
+  /**
+   * 게임 종료 문구 출력 후 종료
+   * @returns 종료
+   */
+  printGameOver() {
+    Console.print(this.GAME_OVER_COMMENT);
+    return;
+  }
 }

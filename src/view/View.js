@@ -52,4 +52,10 @@ export default class View {
   printRestartInputError() {
     throw new Error(this.RESTART_INPUT_ERROR);
   }
+
+  async getRestartInput() {
+    const RESTART_INPUT = await Console.readLineAsync(this.RESTART_INPUT_COMMENT);
+    
+    this.controller.isRestartInputValid(RESTART_INPUT);
+  }
 }

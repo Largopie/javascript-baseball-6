@@ -34,4 +34,8 @@ export default class View {
     Console.print(resultComment);
     this.controller.isGameFinish(resultComment);
   }
+
+  printSuccessComment() {
+    Console.print(this.SUCCESS_COMMENT);
+  }
 }

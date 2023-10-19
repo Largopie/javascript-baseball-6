@@ -1,3 +1,7 @@
 export default class Validation {
-  constructor() {}
+  constructor() {
+    this.numberRange = /^[1-9]+$/;
+    this.isUserInputValid = true;
+    this.isRestartInputValid = true;
+  }
 }

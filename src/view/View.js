@@ -21,4 +21,17 @@ export default class View {
 
     this.controller.updateUserInputNumber(userInput);
   }
+
+  printUserInputAfterResult([strike, ball]) {
+    let resultComment = '';
+
+    if(strike) resultComment += `${strike}스트라이크`;
+
+    if(ball) resultComment += `${ball}볼`;
+
+    if(!ball & !strike) resultComment += '낫싱';
+
+    Console.print(resultComment);
+    this.controller.isGameFinish(resultComment);
+  }
 }

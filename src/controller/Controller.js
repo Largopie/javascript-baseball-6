@@ -68,4 +68,22 @@ export default class Controller {
       this.view.getUserInput();
     }
   }
+
+  /**
+   * 재시작 여부 확인 후 게임 재시작 또는 게임 종료 로직
+   * @param {string} restartInput [재시작 여부]
+   */
+  isRestartInputValid(restartInput) {
+    const RESTART_RESULT = this.validation.getRestartInputValidation(restartInput);
+
+    if(!RESTART_RESULT) {
+      this.view.printRestartInputError();
+    }
+
+    if(restartInput === '1') {
+      new Controller(false).init();
+    } else if(restartInput === '2') {
+      this.view.printGameOver();
+    }
+  }
 }

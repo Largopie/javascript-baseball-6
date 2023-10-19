@@ -22,7 +22,7 @@ export default class Validation {
   }
 
   /**
-   * 유저가 입력한 값을 검증 후 검증 결과(true | false) 변경
+   * 유저가 입력한 값을 검증 후 검증 결과(true | false) 반환
    * @param {string[]} userInput [유저가 입력한 값]
    * @returns boolean
    */
@@ -32,12 +32,22 @@ export default class Validation {
   }
 
   /**
-   * 재시작 여부 입력 값이 1이나 2가 모두 아니면 검증 결과(true | false) 변경
+   * 재시작 할 때 입력한 값이 유효한지 검증
    * @param {string[]} restartInput [재시작 여부 입력]
    */
   checkRestartInputValid(restartInput) {
     if(restartInput !== '1' && restartInput !== '2') {
       this.restartInputValidation = false;
     }
+  }
+
+  /**
+   * 재시작 입력 값을 검증 후 검증 결과(true | false) 반환
+   * @param {string[]} restartInput [재시작 여부 입력]
+   * @returns 
+   */
+  getRestartInputValidation(restartInput) {
+    this.checkRestartInputValid(restartInput);
+    return this.restartInputValidation;
   }
 }

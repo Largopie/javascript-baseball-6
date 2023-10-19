@@ -18,6 +18,6 @@ export default class ComputerNumber {
   }
 
   chooseRandomNumber() {
-    this.setNumber(Random.pickUniqueNumbersInRange(1,9,3));
+    this.setNumber(Random.pickUniqueNumbersInRange(1,9,3).map((num) => String(num)));
   }
 }

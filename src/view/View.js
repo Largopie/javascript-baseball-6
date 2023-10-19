@@ -48,4 +48,8 @@ export default class View {
   printCorrectNumber() {
     Console.print(this.CORRECT_NUMBER);
   }
+
+  printRestartInputError() {
+    throw new Error(this.RESTART_INPUT_ERROR);
+  }
 }

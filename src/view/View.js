@@ -12,10 +12,16 @@ export default class View {
     this.GAME_OVER_COMMENT = '이용해주셔서 감사합니다. 게임을 종료합니다.';
   }
 
+  /**
+   * input 값이 유효하지 않을 시 에러 출력
+   */
   printInputNumberError() {
     throw new Error(this.INPUT_NUMBER_ERROR);
   }
 
+  /**
+   * 유저가 시도한 input을 받은 후 유효성을 검증하는 로직
+   */
   async getUserInput() {
     const userInput = Console.readLineAsync(this.INPUT_NUMBER_COMMENT);
 
@@ -23,6 +29,10 @@ export default class View {
     this.controller.isUserInputValid();
   }
 
+  /**
+   * 볼과 스트라이크 개수에 따른 출력 로직
+   * @param {number[]} param [스트라이크 수, 볼 수]
+   */
   printUserInputResult([strike, ball]) {
     let resultComment = '';
     if(ball) resultComment+=`${ball}볼 `;

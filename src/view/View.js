@@ -24,8 +24,7 @@ export default class View {
    */
   async getUserInput() {
     const USER_INPUT = await Console.readLineAsync(this.INPUT_NUMBER_COMMENT);
-
-    this.controller.updateUserInputNumber(USER_INPUT);
+    this.controller.updateUserInputNumber(USER_INPUT.split(''));
     this.controller.isUserInputValid();
   }
 

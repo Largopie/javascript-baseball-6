@@ -1,5 +1,6 @@
 import ComputerNumber from "../model/ComputerNumber.js";
 import UserInputNumber from "../model/UserInputNumber.js";
+import Validation from "../util/Validation.js";
 import View from "../view/View.js";
 
 export default class Controller {
@@ -9,6 +10,7 @@ export default class Controller {
     this.view = new View();
     this.computerNumber = new ComputerNumber();
     this.userInputNumber = new UserInputNumber();
+    this.validation = new Validation();
   }
 
   /**
@@ -17,5 +19,23 @@ export default class Controller {
    */
   updateUserInputNumber(userNumber) {
     this.userInputNumber.setNumber(userNumber);
+  }
+
+  /**
+   * 유저가 입력한 input 값이 유효한지 확인 후 결과 확인
+   */
+  isUserInputValid() {
+    const USER_INPUT_RESULT = this.validation.getUserInputValidation(
+      this.userInputNumber.getNumber()
+    )
+    if(!USER_INPUT_RESULT) {
+      this.view.printInputNumberError();
+    }
+
+    this.getInputUserResult();
+  }
+
+  getInputUserResult() {
+
   }
 }

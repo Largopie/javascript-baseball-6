@@ -34,5 +34,10 @@ export default class Controller {
 
     this.view.printUserInputAfterResult(strikeBallCount);
   }
+
+  userRestartValidation(inputNumber) {
+    this.validation.checkRestartInputValidation(inputNumber);
+    return this.validation.getRestartInputValid();
+  }
 }
 

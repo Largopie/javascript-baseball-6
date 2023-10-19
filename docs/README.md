@@ -22,10 +22,10 @@
 ##
 
 ### Model 구현
-- [] ComputerNumber 모델 구현
+- [x] ComputerNumber 모델 구현
   - [] 컴퓨터가 임의로 선택한 3개의 수 구현
   - [] 상태 관리 로직 구현
-- [] UserInputNumber 모델 구현
+- [x] UserInputNumber 모델 구현
   - [] 유저가 입력한 수 상태 관리 로직 구현
 
 ### View 구현

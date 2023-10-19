@@ -19,4 +19,10 @@ export default class Validation {
   getUserInputValid() {
     return this.isUserInputValid;
   }
+
+  checkRestartInputValidation(restartInputNumber) {
+    if(restartInputNumber !== 1 && restartInputNumber !== 2) {
+      this.isRestartInputValid = false;
+    }
+  }
 }

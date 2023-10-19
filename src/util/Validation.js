@@ -4,4 +4,16 @@ export default class Validation {
     this.userInputValidation = true;
     this.restartInputValidation = true;
   }
+
+  checkUserInputValid(userInput) {
+    const USER_INPUT_LENGTH = userInput.length;
+    const USER_INPUT_TO_SET_LENGTH = new Set(userInput).size;
+    const USER_INPUT_TO_NUMBER = +userInput.join('');
+    if(this.numberRangeValidation.test(USER_INPUT_TO_NUMBER) ||
+      USER_INPUT_LENGTH !== 3 ||
+      USER_INPUT_TO_SET_LENGTH !== 3
+    ) {
+      this.userInputValidation = false;
+    }
+  }
 }

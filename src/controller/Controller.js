@@ -35,7 +35,24 @@ export default class Controller {
     this.getInputUserResult();
   }
 
+  /**
+   * 유저가 입력한 input값에 따른 결과 가공 로직
+   */
   getInputUserResult() {
+    const COMPUTER = this.computerNumber.getNumber();
+    const USER = this.userInputNumber.getNumber();
+    let strikeBallCounts = [0, 0];
 
+    for(let i = 0; i < COMPUTER.length; i++) {
+      if(COMPUTER[i] === USER[i]) {
+        strikeBallCounts[0] +=1;
+      }
+      
+      if(COMPUTER[i] !== USER[i] && COMPUTER.includes(USER[i])) {
+        strikeBallCounts[1] +=1;
+      }
+    }
+
+    this.view.printUserInputResult(strikeBallCounts);
   }
 }

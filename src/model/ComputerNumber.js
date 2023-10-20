@@ -18,6 +18,12 @@ export default class ComputerNumber {
   }
 
   chooseRandomNumber() {
-    this.setNumber(Random.pickUniqueNumbersInRange(1,9,3).map((num) => String(num)));
+    const NUMBER_ARR = [];
+
+    while(NUMBER_ARR.length < 3) {
+      const NUMBER = Random.pickNumberInRange(1, 9).toString();
+      if(!NUMBER_ARR.includes(NUMBER)) NUMBER_ARR.push(NUMBER);
+    }
+    this.setNumber(NUMBER_ARR);
   }
 }

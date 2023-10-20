@@ -22,10 +22,10 @@ export default class Controller {
       await this.view.printErrorComment();
     }
     
-    this.userInputAfterResult();
+    await this.userInputAfterResult();
   }
 
-  userInputAfterResult() {
+  async userInputAfterResult() {
     const computer = this.computerNumber.getNumber();
     const user = this.userInputNumber.getNumber();
 
@@ -40,7 +40,7 @@ export default class Controller {
     this.view.printUserInputAfterResult(strikeBallCount);
   }
 
-  userRestartValidation(inputNumber) {
+  async userRestartValidation(inputNumber) {
     this.validation.checkRestartInputValidation(inputNumber);
     return this.validation.getRestartInputValid();
   }
@@ -54,23 +54,23 @@ export default class Controller {
     }
   }
 
-  checkGameOver(userInput) {
+  async checkGameOver(userInput) {
     const restartResult = this.validation.getRestartInputValid(userInput);
     if(!restartResult) {
-      this.view.printRestartErrorComment();
+      await this.view.printRestartErrorComment();
     }
     
     if(userInput === '1') {
-      new Controller(false).init();
+      await new Controller(false).init();
     } else if(userInput === '2') {
       this.view.printGameOver();
     }
   }
 
-  init() {
+  async init() {
     if(this.isFirstGame) this.view.printStartComment();
     this.computerNumber.chooseRandomNumber();
-    this.view.getUserInput();
+    await this.view.getUserInput();
   }
 }
 

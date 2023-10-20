@@ -15,20 +15,14 @@ export default class View {
   }
 
   async getUserInput() {
-    try {
-      const userInput = await Console.readLineAsync(this.INPUT_COMMENT);
+    const userInput = await Console.readLineAsync(this.INPUT_COMMENT);
 
-      this.controller.updateUserInputNumber(userInput.split(''));
+      await this.controller.updateUserInputNumber(userInput.split(''));
 
       await this.controller.userInputValidation();
-
-    } catch (error){
-      Console.print(error)
-    }
-    
   }
 
-  printUserInputAfterResult([strike, ball]) {
+  async printUserInputAfterResult([strike, ball]) {
     let resultComment = '';
 
     if(ball) resultComment += `${ball}볼 `;
@@ -38,8 +32,8 @@ export default class View {
 
     if(!ball && !strike) resultComment += '낫싱';
 
-    Console.print(resultComment);
-    this.controller.isGameFinish(resultComment);
+    await Console.print(resultComment);
+    await this.controller.isGameFinish(resultComment);
   }
 
   printSuccessComment() {

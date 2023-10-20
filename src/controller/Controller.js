@@ -16,10 +16,10 @@ export default class Controller {
     this.userInputNumber.setNumber(inputNumber);
   }
 
-  userInputValidation() {
+  async userInputValidation() {
     const validationResult = this.validation.getUserInputValid(this.userInputNumber.getNumber());
     if(!validationResult) {
-      this.view.printErrorComment();
+      await this.view.printErrorComment();
     }
     
     this.userInputAfterResult();
